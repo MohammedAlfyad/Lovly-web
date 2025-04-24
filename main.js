@@ -181,4 +181,4 @@ const fireworks = new Fireworks.default(container, {
 });
 
 fireworks.start();
-setTimeout(() => fireworks.stop(), 15000); // توقف بعد 15 ثانية
+setTimeout(() => fireworks.stop(), 7000); // توقف بعد 15 ثانية
