@@ -17,7 +17,6 @@ function typeWriter() {
   }
 }
 
-typeWriter();
 
 //image
 const images = [
@@ -118,7 +117,7 @@ function startSurprise() {
     .catch((err) => {
       console.log("🚫 مشكلة في تشغيل الصوت:", err);
     });
-
+typeWriter();
   // بعد ما تنتهي الأولى، شغّل التانية
   audio1.addEventListener("ended", () => {
     audio2
