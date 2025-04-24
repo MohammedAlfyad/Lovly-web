@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+body {
+  background-color: black;
+  direction: rtl;
+  padding: 20px;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+#mainContent {
+  display: none;
+}
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+}
+/*alert*/
+.modal-img {
+  width: 200px;
+  margin-bottom: 15px;
+  animation: bounce 1s infinite;
+  filter: drop-shadow(5px 5px 10px rgb(209, 1, 1));
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.alert-box h2 {
+  margin-top: 10px;
+  color: #ff1493;
+}
+
+.alert-box p {
+  font-size: 20px;
+  color: #444;
+  line-height: 2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert-box {
+  background-color: pink;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+  max-width: 90%;
+}
+
+.alert-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.alert-box button:hover {
+  background-color: #ff1493;
+}
+/*End Alert*/
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 3rem;
+  background-image: url(pexels-iriser-1590549.jpg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.box1 {
+  max-width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid pink;
+  padding: 10px;
+}
+.title {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: justify;
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+.tota {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(5px 5px 10px rgb(0, 105, 128));
+}
+#cursor {
+  display: inline-block;
+  color: #ff4d88;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.slider-container {
+  width: 75%;
+  max-width: 800px;
+  margin: 50px auto; /* في المنتصف أفقيًا */
+  text-align: center;
+  box-shadow: 20px 20px 10px gray;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fdfdfd;
+}
+
+#slider-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* يغطي الحجم كاملًا */
+  transition: opacity 1s ease-in-out;
+  border-bottom: 1px solid #ccc;
+  display: block;
+}
+#caption {
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #444;
+  font-family: "Cairo", sans-serif;
+  background-color: #f9f9f9;
+}
+/* sticker */
+h4 {
+  color: gold;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.sticker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.sticker img {
+  width: 250px;
+  height: 250px;
+  filter: drop-shadow(7px 3px 10px rgb(0, 108, 189));
+}
+footer {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #999;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .title p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  #caption {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .life {
+    max-height: 300px;
+  }
+}
+@media (max-width: 600px) {
+  .box1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .title p {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  #caption {
+    font-size: 0.95rem;
+  }
+
+  .life {
+    max-height: 220px;
+  }
+}
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
