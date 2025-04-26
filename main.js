@@ -17,6 +17,7 @@ function typeWriter() {
   }
 }
 
+// typeWriter();
 
 //image
 const images = [
@@ -117,7 +118,9 @@ function startSurprise() {
     .catch((err) => {
       console.log("🚫 مشكلة في تشغيل الصوت:", err);
     });
-typeWriter();
+  typeWriter();
+  fireworks.start();
+  setTimeout(() => fireworks.stop(), 7000); // توقف بعد 7 ثانية
   // بعد ما تنتهي الأولى، شغّل التانية
   audio1.addEventListener("ended", () => {
     audio2
@@ -130,6 +133,8 @@ typeWriter();
       });
   });
 }
+
+// animation fireworks
 document.getElementById("mainContent").classList.add("fade-in");
 const container = document.getElementById("fireworks-container");
 const fireworks = new Fireworks.default(container, {
@@ -180,5 +185,5 @@ const fireworks = new Fireworks.default(container, {
   },
 });
 
-fireworks.start();
-setTimeout(() => fireworks.stop(), 7000); // توقف بعد 15 ثانية
+// fireworks.start();
+// setTimeout(() => fireworks.stop(), 3000); // توقف بعد 3 ثانية
