@@ -71,7 +71,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   background: linear-gradient(135deg, #ffecd2 50%, #fcb69f 53%);
   display: flex;
   align-items: center;
