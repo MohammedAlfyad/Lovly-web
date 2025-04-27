@@ -117,6 +117,8 @@ function startSurprise() {
     .catch((err) => {
       console.log("🚫 مشكلة في تشغيل الصوت:", err);
     });
+  modalMusic.pause();
+  modalMusic.currentTime = 0;
   typeWriter();
   fireworks.start();
   setTimeout(() => fireworks.stop(), 7000); // توقف بعد 7 ثانية
@@ -224,4 +226,4 @@ function launchConfetti() {
     }
   })();
 }
-launchConfetti()
+launchConfetti();
