@@ -41,6 +41,7 @@ body {
   margin-bottom: 15px;
   animation: bounce 1s infinite;
   filter: drop-shadow(5px 5px 10px rgb(209, 1, 1));
+  margin-top: -180px;
 }
 
 @keyframes bounce {
@@ -64,6 +65,7 @@ body {
   font-size: 20px;
   color: #444;
   line-height: 2;
+  margin-bottom: 15px;
 }
 
 .overlay {
@@ -71,7 +73,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
   background: linear-gradient(135deg, #ffecd2 50%, #fcb69f 53%);
   display: flex;
   align-items: center;
