@@ -1,13 +1,11 @@
+//Start typeWriter
 const textElement = document.querySelector(".title p");
 const originalText = textElement.textContent;
 textElement.innerHTML = "<span id='typed'></span><span id='cursor'>|</span>"; // محتوى مبدأي
-
 const typedSpan = document.getElementById("typed");
 const cursorSpan = document.getElementById("cursor");
-
 let i = 0;
 const speed = 50;
-
 function typeWriter() {
   if (i < originalText.length) {
     let char = originalText.charAt(i);
@@ -16,10 +14,11 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
+//End typeWriter();
 
-// typeWriter();
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//image
+//Start changeSlide
 const images = [
   { src: "./img/10.jpeg", caption: "مهما لفيت ادور مش هلاقي زيك تاني 🥺❤️❤️" },
   { src: "./img/11.jpeg", caption: "ياه مانت الدنيا واحلى مافيها 💗✨" },
@@ -84,10 +83,8 @@ const images = [
 let index = 0;
 const imageElement = document.getElementById("slider-image");
 const captionElement = document.getElementById("caption");
-
 function changeSlide() {
   imageElement.style.opacity = 0;
-
   setTimeout(() => {
     imageElement.src = images[index].src;
     captionElement.textContent = images[index].caption;
@@ -95,10 +92,12 @@ function changeSlide() {
     index = (index + 1) % images.length;
   }, 1000); // Fade out duration
 }
+setInterval(changeSlide, 5000); // كل 5 ثواني تتغير الصورة
+//END changeSlide
 
-setInterval(changeSlide, 5000); // كل 4 ثواني تتغير الصورة
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
-//audio
+//Start startSurprise
 const audio1 = new Audio("./audio/tota.mp3");
 const audio2 = new Audio("./audio/you.mp3");
 
@@ -133,6 +132,9 @@ function startSurprise() {
       });
   });
 }
+//End startSurprise
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // animation fireworks
 document.getElementById("mainContent").classList.add("fade-in");
@@ -187,3 +189,31 @@ const fireworks = new Fireworks.default(container, {
 
 // fireworks.start();
 // setTimeout(() => fireworks.stop(), 3000); // توقف بعد 3 ثانية
+const modalMusic = new Audio("./audio/happy.mp3"); // ضع مسار أغنية المودال هنا
+modalMusic.loop = false; // لا تكرار
+function launchConfetti() {
+  const duration = 30 * 1000; // مدة الاحتفال 30 ثواني
+  const end = Date.now() + duration;
+
+  (function frame() {
+    // تطاير الورق من فوق
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
+modalMusic.play();
+launchConfetti()
