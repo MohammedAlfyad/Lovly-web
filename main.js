@@ -189,8 +189,17 @@ const fireworks = new Fireworks.default(container, {
 
 // fireworks.start();
 // setTimeout(() => fireworks.stop(), 3000); // توقف بعد 3 ثانية
-const modalMusic = new Audio("./audio/happy.mp3"); // ضع مسار أغنية المودال هنا
-modalMusic.loop = false; // لا تكرار
+const modalMusic = new Audio("./audio/happy.mp3");
+modalMusic.loop = false;
+
+let modalMusicPlayed = false; // علشان يشتغل مره واحدة بس
+
+function playModalMusicOnce() {
+  if (!modalMusicPlayed) {
+    modalMusic.play();
+    modalMusicPlayed = true;
+  }
+}
 function launchConfetti() {
   const duration = 30 * 1000; // مدة الاحتفال 30 ثواني
   const end = Date.now() + duration;
@@ -215,5 +224,4 @@ function launchConfetti() {
     }
   })();
 }
-modalMusic.play();
 launchConfetti()
